@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: nodejs-bitkmbxa 
+  janus-idp.io/tekton: nodejs-bitkmbxa
+  backstage.io/kubernetes-id: nodejs-bitkmbxa
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: nodejs-bitkmbxa
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
